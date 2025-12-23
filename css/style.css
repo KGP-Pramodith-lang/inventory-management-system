@@ -1,0 +1,125 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #eef2ff;
+}
+.menu-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  height: 100%;
+  background-color: white;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+.menu-btn {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.card-title {
+  color: #1f2937;
+  font-weight: 600;
+}
+.text-muted {
+  color: #6b7280 !important;
+}
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.settings-btn {
+  position: fixed;
+  top: 20px;
+  right: 82px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #584cf4;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+}
+.settings-btn:hover {
+  background-color: #4338ca;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.btn-primary {
+  background-color: #584cf4;
+  border-color: #584cf4;
+}
+.btn-primary:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+.btn-outline-primary {
+  color: #584cf4;
+  border-color: #584cf4;
+}
+.btn-outline-primary:hover {
+  background-color: #584cf4;
+  border-color: #584cf4;
+}
+h2 {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Dashboard stats + alerts */
+.stat-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.section-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
