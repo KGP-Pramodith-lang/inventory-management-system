@@ -268,7 +268,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `supply_items`
 --
 ALTER TABLE `supply_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `supply_orders`
@@ -297,6 +297,64 @@ ALTER TABLE `refunds`
 --
 ALTER TABLE `supply_items`
   ADD CONSTRAINT `supply_items_ibfk_1` FOREIGN KEY (`supply_order_id`) REFERENCES `supply_orders` (`id`) ON DELETE CASCADE;
+
+-- ---------------------------------------------------------
+-- Sample data (seed)
+-- Notes:
+-- - We intentionally do NOT insert into `users` here.
+--   The app auto-seeds default users on first login if `users` is empty.
+-- ---------------------------------------------------------
+
+-- Products
+INSERT INTO `products` (`id`, `name`, `sku`, `price`, `quantity`, `created_at`) VALUES
+  (1, 'USB-C Cable 1m', 'USB-C-1M', 6.50, 120, '2025-12-01 08:00:00'),
+  (2, 'Wireless Mouse', 'MOUSE-WL-01', 18.90, 45, '2025-12-01 08:00:00'),
+  (3, 'Notebook A5', 'NOTE-A5-100', 2.20, 300, '2025-12-01 08:00:00'),
+  (4, 'LED Bulb 9W', 'BULB-LED-9W', 3.75, 80, '2025-12-01 08:00:00');
+
+-- Supply (purchases)
+INSERT INTO `supply_orders` (`id`, `supplier_name`, `total_cost`, `order_date`) VALUES
+  (1, 'TechSource Pvt Ltd', 519.95, '2025-12-01 10:15:00'),
+  (2, 'OfficeMart', 220.00, '2025-12-05 14:30:00'),
+  (3, 'BrightLite Distributors', 180.00, '2025-12-10 09:05:00'),
+  (4, 'TechSource Pvt Ltd', 360.00, '2025-12-18 16:20:00');
+
+INSERT INTO `supply_items` (`id`, `supply_order_id`, `product_id`, `product_name`, `quantity`, `buying_price`) VALUES
+  (1, 1, 1, 'USB-C Cable 1m', 100, 3.20),
+  (2, 1, 2, 'Wireless Mouse', 15, 13.33),
+  (3, 2, 3, 'Notebook A5', 200, 1.10),
+  (4, 3, 4, 'LED Bulb 9W', 50, 2.90),
+  (5, 3, 1, 'USB-C Cable 1m', 10, 3.50),
+  (6, 4, 2, 'Wireless Mouse', 30, 12.00);
+
+-- Sales
+INSERT INTO `bills` (`id`, `customer_name`, `total_amount`, `bill_date`) VALUES
+  (1, 'Walk-in', 31.90, '2025-12-20 11:05:00'),
+  (2, 'Nimal Perera', 22.00, '2025-12-20 13:40:00'),
+  (3, 'Walk-in', 15.00, '2025-12-21 09:15:00'),
+  (4, 'Samanthi Silva', 25.50, '2025-12-21 17:25:00'),
+  (5, 'Walk-in', 14.00, '2025-12-22 10:50:00'),
+  (6, 'KGP Retail', 94.50, '2025-12-23 15:10:00');
+
+INSERT INTO `bill_items` (`id`, `bill_id`, `product_id`, `product_name`, `quantity`, `price`) VALUES
+  (1, 1, 1, 'USB-C Cable 1m', 2, 6.50),
+  (2, 1, 2, 'Wireless Mouse', 1, 18.90),
+  (3, 2, 3, 'Notebook A5', 10, 2.20),
+  (4, 3, 4, 'LED Bulb 9W', 4, 3.75),
+  (5, 4, 2, 'Wireless Mouse', 1, 18.90),
+  (6, 4, 3, 'Notebook A5', 3, 2.20),
+  (7, 5, 1, 'USB-C Cable 1m', 1, 6.50),
+  (8, 5, 4, 'LED Bulb 9W', 2, 3.75),
+  (9, 6, 2, 'Wireless Mouse', 5, 18.90);
+
+-- Refund requests
+INSERT INTO `refunds` (
+  `id`, `bill_id`, `refund_amount`, `reason`, `status`,
+  `requested_by`, `requested_role`, `requested_at`,
+  `reviewed_by`, `reviewed_at`, `review_note`
+) VALUES
+  (1, 4, 18.90, 'Mouse stopped working', 'approved', 'staff', 'staff', '2025-12-22 09:00:00', 'admin', '2025-12-22 10:15:00', 'Approved after inspection'),
+  (2, 2, 2.20, 'Returned 1 notebook (unopened)', 'pending', 'staff', 'staff', '2025-12-23 10:00:00', NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
