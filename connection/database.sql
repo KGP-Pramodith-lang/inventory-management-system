@@ -82,17 +82,6 @@ CREATE TABLE `bills` (
   `bill_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `bills`
---
-
-INSERT INTO `bills` (`id`, `customer_name`, `total_amount`, `bill_date`) VALUES
-(1, 'Walk-in', 1000.00, '2025-11-30 15:15:26'),
-(2, 'Walk-in', 6000.00, '2025-11-30 15:16:08'),
-(4, 'Walk-in', 1000.00, '2025-11-30 15:53:50'),
-(5, 'Walk-in', 4000.00, '2025-11-30 15:59:04'),
-(6, 'Walk-in', 1000.00, '2025-11-30 16:30:36');
-
 -- --------------------------------------------------------
 
 --
@@ -107,20 +96,6 @@ CREATE TABLE `bill_items` (
   `quantity` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bill_items`
---
-
-INSERT INTO `bill_items` (`id`, `bill_id`, `product_id`, `product_name`, `quantity`, `price`) VALUES
-(1, 1, 1, 'pasan', 1, 1000.00),
-(2, 2, 1, 'pasan', 1, 1000.00),
-(3, 2, 2, 'nadil', 1, 2000.00),
-(4, 2, 3, 'chanul', 1, 3000.00),
-(6, 4, 1, 'pasan', 1, 1000.00),
-(7, 5, 1, 'pasan', 1, 1000.00),
-(8, 5, 1, 'pasan', 3, 1000.00),
-(9, 6, 1, 'pasan', 1, 1000.00);
 
 -- --------------------------------------------------------
 
@@ -175,16 +150,6 @@ CREATE TABLE `products` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `sku`, `price`, `quantity`, `created_at`) VALUES
-(1, 'pasan', '001', 1000.00, 6, '2025-11-30 14:35:26'),
-(2, 'nadil', '002', 2000.00, 6, '2025-11-30 15:01:53'),
-(3, 'chanul', '003', 3000.00, 6, '2025-11-30 15:02:07'),
-(4, 'apple', '004', 1.00, 6, '2025-11-30 15:43:24');
-
 -- --------------------------------------------------------
 
 --
@@ -200,17 +165,6 @@ CREATE TABLE `supply_items` (
   `buying_price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `supply_items`
---
-
-INSERT INTO `supply_items` (`id`, `supply_order_id`, `product_id`, `product_name`, `quantity`, `buying_price`) VALUES
-(1, 1, 1, 'pasan', 2, 3000.00),
-(2, 2, 1, 'pasan', 3, 6000.00),
-(3, 2, 2, 'nadil', 4, 5000.00),
-(4, 3, 1, 'pasan', 1, 200000.00),
-(5, 4, 1, 'pasan', 4, 100.00);
-
 -- --------------------------------------------------------
 
 --
@@ -223,16 +177,6 @@ CREATE TABLE `supply_orders` (
   `total_cost` decimal(10,2) NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `supply_orders`
---
-
-INSERT INTO `supply_orders` (`id`, `supplier_name`, `total_cost`, `order_date`) VALUES
-(1, 'pppppp', 6000.00, '2025-11-30 15:27:17'),
-(2, 'kasun', 38000.00, '2025-11-30 15:39:22'),
-(3, 'sss', 200000.00, '2025-11-30 15:40:12'),
-(4, 'rrrr', 400.00, '2025-11-30 16:06:13');
 
 --
 -- Indexes for dumped tables
