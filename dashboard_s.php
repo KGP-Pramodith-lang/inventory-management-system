@@ -58,6 +58,9 @@ try {
     <a href="logout.php" class="logout-btn" title="Logout">
       <i class="bi bi-box-arrow-right"></i>
     </a>
+    <button type="button" class="chat-ai-btn" id="chatAiToggle" title="Chat with AI" aria-label="Chat with AI" aria-expanded="false">
+      <i class="bi bi-chat-dots"></i>
+    </button>
 
     <div class="text-center mb-5">
       <h2 class="fw-bold">Staff Dashboard</h2>
@@ -205,6 +208,7 @@ try {
 
     </div>
 
+    <?php require_once __DIR__ . '/partials/ai_chat_widget.php'; ?>
     <?php require_once __DIR__ . '/partials/footer.php'; ?>
   </body>
 </html>
