@@ -41,15 +41,15 @@ if (!isset($_SESSION['ai_chat_history']) || !is_array($_SESSION['ai_chat_history
 $_SESSION['ai_chat_history'][] = ['role' => 'user', 'content' => $message];
 $_SESSION['ai_chat_history'] = array_slice($_SESSION['ai_chat_history'], -12);
 
-$apiKey = 'AIzaSyAHxVZRm1rJNLTR2PUjdVR1V_1PjP9fenM';
+$apiKey = (string)getenv('GEMINI_API_KEY');
 if ($apiKey === '') {
   // Common alternative name
   $apiKey = (string)getenv('GOOGLE_API_KEY');
 }
 
-$model = 'gemini-2.5-flash';
+$model = (string)getenv('GEMINI_MODEL');
 if ($model === '') {
-  $model = 'gemini-1.5-flash';
+  $model = 'gemini-2.5-flash';
 }
 
 if ($apiKey === '') {
