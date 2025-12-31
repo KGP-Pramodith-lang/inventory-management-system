@@ -166,7 +166,7 @@ $products = $pdo->query("SELECT * FROM products")->fetchAll();
                                 <datalist id="product_list">
                                     <?php foreach ($products as $p): ?>
                                         <option value="<?= $p['id'] ?>">
-                                            <?= $p['name'] ?> - $<?= $p['price'] ?> (Stock: <?= $p['quantity'] ?>)
+                                            <?= $p['name'] ?> - Rs. <?= $p['price'] ?> (Stock: <?= $p['quantity'] ?>)
                                         </option>
                                     <?php endforeach; ?>
                                 </datalist>
@@ -210,9 +210,9 @@ $products = $pdo->query("SELECT * FROM products")->fetchAll();
                                 ?>
                                     <tr>
                                         <td><?= $item['name'] ?></td>
-                                        <td>$<?= number_format($item['price'], 2) ?></td>
+                                        <td>Rs. <?= number_format($item['price'], 2) ?></td>
                                         <td><?= $item['qty'] ?></td>
-                                        <td>$<?= number_format($item['line_total'], 2) ?></td>
+                                        <td>Rs. <?= number_format($item['line_total'], 2) ?></td>
                                     </tr>
                                 <?php 
                                     endforeach; 
@@ -220,7 +220,7 @@ $products = $pdo->query("SELECT * FROM products")->fetchAll();
                                 ?>
                                 <tr class="fw-bold fs-5">
                                     <td colspan="3" class="text-end">Grand Total:</td>
-                                    <td>$<?= number_format($grand_total, 2) ?></td>
+                                    <td>Rs. <?= number_format($grand_total, 2) ?></td>
                                 </tr>
                             </tbody>
                         </table>

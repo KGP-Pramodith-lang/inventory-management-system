@@ -79,7 +79,7 @@ if (isset($_SESSION['role'])) {
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading<?= $id ?>">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $id ?>">
-                        <strong>Order #<?= $id ?></strong> &nbsp;|&nbsp; <?= $order['supplier_name'] ?> &nbsp;|&nbsp; <span class="text-danger">Cost: $<?= $order['total_cost'] ?></span>
+                        <strong>Order #<?= $id ?></strong> &nbsp;|&nbsp; <?= $order['supplier_name'] ?> &nbsp;|&nbsp; <span class="text-danger">Cost: Rs. <?= $order['total_cost'] ?></span>
                     </button>
                 </h2>
                 <div id="collapse<?= $id ?>" class="accordion-collapse collapse" data-bs-parent="#supplyAccordion">
@@ -101,9 +101,9 @@ if (isset($_SESSION['role'])) {
                                 ?>
                                     <tr>
                                         <td><?= $item['product_name'] ?></td>
-                                        <td>$<?= $item['buying_price'] ?></td>
+                                        <td>Rs. <?= $item['buying_price'] ?></td>
                                         <td><?= $item['quantity'] ?></td>
-                                        <td>$<?= number_format($item['buying_price'] * $item['quantity'], 2) ?></td>
+                                        <td>Rs. <?= number_format($item['buying_price'] * $item['quantity'], 2) ?></td>
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>

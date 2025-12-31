@@ -213,9 +213,9 @@ $products = $pdo->query("SELECT * FROM products")->fetchAll();
                             ?>
                                 <tr>
                                     <td><?= $item['name'] ?></td>
-                                    <td>$<?= number_format($item['price'], 2) ?></td>
+                                    <td>Rs. <?= number_format($item['price'], 2) ?></td>
                                     <td><?= $item['qty'] ?></td>
-                                    <td>$<?= number_format($item['line_total'], 2) ?></td>
+                                    <td>Rs. <?= number_format($item['line_total'], 2) ?></td>
                                 </tr>
                             <?php 
                                 endforeach; 
@@ -223,7 +223,7 @@ $products = $pdo->query("SELECT * FROM products")->fetchAll();
                             ?>
                             <tr class="fw-bold fs-5">
                                 <td colspan="3" class="text-end">Total Cost:</td>
-                                <td>$<?= number_format($grand_total, 2) ?></td>
+                                <td>Rs. <?= number_format($grand_total, 2) ?></td>
                             </tr>
                         </tbody>
                     </table>

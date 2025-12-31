@@ -131,9 +131,9 @@
                     echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['sku']) . "</td>";
-                    echo "<td>$" . number_format($row['price'], 2) . "</td>";
+                    echo "<td>Rs. " . number_format($row['price'], 2) . "</td>";
                     echo "<td class='$stock_class'>" . htmlspecialchars($row['quantity']) . "</td>";
-                    echo "<td>$" . number_format($total_value, 2) . "</td>";
+                    echo "<td>Rs. " . number_format($total_value, 2) . "</td>";
                     
                     echo "</tr>";
                 }

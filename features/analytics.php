@@ -106,7 +106,7 @@ foreach ($stock_items as $s) { $stock_names[] = $s['name']; $stock_qtys[] = $s['
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-header">Inventory Value</div>
                     <div class="card-body">
-                        <h3 class="card-title">$<?= number_format($inventory_value, 2) ?></h3>
+                        <h3 class="card-title">Rs. <?= number_format($inventory_value, 2) ?></h3>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ foreach ($stock_items as $s) { $stock_names[] = $s['name']; $stock_qtys[] = $s['
                 <div class="card text-white bg-success mb-3">
                     <div class="card-header">Total Revenue</div>
                     <div class="card-body">
-                        <h3 class="card-title">$<?= number_format($total_sales, 2) ?></h3>
+                        <h3 class="card-title">Rs. <?= number_format($total_sales, 2) ?></h3>
                     </div>
                 </div>
             </div>

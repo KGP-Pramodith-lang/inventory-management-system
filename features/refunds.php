@@ -139,7 +139,7 @@ function badge_class(string $status): string
                                     <option value="" selected disabled>Choose bill...</option>
                                     <?php foreach ($bills as $b): ?>
                                         <option value="<?= (int)$b['id'] ?>">
-                                            Bill #<?= (int)$b['id'] ?> — <?= date('d M Y, h:i A', strtotime((string)$b['bill_date'])) ?> — $<?= number_format((float)$b['total_amount'], 2) ?>
+                                            Bill #<?= (int)$b['id'] ?> — <?= date('d M Y, h:i A', strtotime((string)$b['bill_date'])) ?> — Rs. <?= number_format((float)$b['total_amount'], 2) ?>
                                             <?= ($b['customer_name'] ?? '') ? (' — ' . $b['customer_name']) : '' ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -200,7 +200,7 @@ function badge_class(string $status): string
                                                         <div class="text-muted small">Customer: <?= htmlspecialchars((string)$r['customer_name']) ?></div>
                                                     <?php endif; ?>
                                                 </td>
-                                                <td class="fw-semibold">$<?= number_format((float)($r['refund_amount'] ?? 0), 2) ?></td>
+                                                <td class="fw-semibold">Rs. <?= number_format((float)($r['refund_amount'] ?? 0), 2) ?></td>
                                                 <td>
                                                     <span class="badge <?= badge_class($status) ?>"><?= htmlspecialchars(ucfirst($status)) ?></span>
                                                     <?php if ($reviewNote): ?>

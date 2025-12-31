@@ -96,7 +96,7 @@ try {
         <div class="stat-card p-4 d-flex align-items-center justify-content-between">
           <div>
             <div class="text-muted">Today's Sales</div>
-            <div class="fw-semibold fs-4 text-success">$<?php echo number_format($todays_sales, 2); ?></div>
+            <div class="fw-semibold fs-4 text-success">Rs. <?php echo number_format($todays_sales, 2); ?></div>
           </div>
           <div class="stat-icon bg-success-subtle text-success">
             <i class="bi bi-currency-dollar"></i>
@@ -108,7 +108,7 @@ try {
         <div class="stat-card p-4 d-flex align-items-center justify-content-between">
           <div>
             <div class="text-muted">Inventory Value</div>
-            <div class="fw-semibold fs-4" style="color:#584cf4">$<?php echo number_format($inventory_value, 2); ?></div>
+            <div class="fw-semibold fs-4" style="color:#584cf4">Rs. <?php echo number_format($inventory_value, 2); ?></div>
           </div>
           <div class="stat-icon" style="background: rgba(88, 76, 244, 0.12); color:#584cf4">
             <i class="bi bi-graph-up"></i>

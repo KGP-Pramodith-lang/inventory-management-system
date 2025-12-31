@@ -87,7 +87,7 @@ if (isset($_SESSION['role'])) {
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $bill_id ?>">
                         <div class="d-flex w-100 justify-content-between me-3">
                             <span><strong>Bill #<?= $bill_id ?></strong> <span class="text-muted mx-2">|</span> <?= $date ?></span>
-                            <span class="text-success fw-bold">$<?= number_format($bill['total_amount'], 2) ?></span>
+                            <span class="text-success fw-bold">Rs. <?= number_format($bill['total_amount'], 2) ?></span>
                         </div>
                     </button>
                 </h2>
@@ -119,16 +119,16 @@ if (isset($_SESSION['role'])) {
                                 ?>
                                     <tr>
                                         <td><?= $item['product_name'] ?></td>
-                                        <td>$<?= number_format($item['price'], 2) ?></td>
+                                        <td>Rs. <?= number_format($item['price'], 2) ?></td>
                                         <td><?= $item['quantity'] ?></td>
-                                        <td>$<?= number_format($subtotal, 2) ?></td>
+                                        <td>Rs. <?= number_format($subtotal, 2) ?></td>
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td colspan="3" class="text-end fw-bold">Grand Total:</td>
-                                    <td class="fw-bold">$<?= number_format($bill['total_amount'], 2) ?></td>
+                                    <td class="fw-bold">Rs. <?= number_format($bill['total_amount'], 2) ?></td>
                                 </tr>
                             </tfoot>
                         </table>
