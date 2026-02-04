@@ -558,6 +558,5 @@ Management Tool:
 
 ---
 
-_Generated: February 4, 2026_
 _System: Inventory Management System (IMS)_
 _Version: 1.0_
